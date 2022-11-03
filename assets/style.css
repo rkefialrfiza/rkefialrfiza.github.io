@@ -1,0 +1,972 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Quicksand:wght@400;700&family=Ubuntu:wght@400;500&display=swap");
+
+html {
+    scroll-behavior: smooth;
+}
+
+.colored {
+    color: #17987c;
+}
+
+::selection {
+    background: #00715f;
+}
+
+hr {
+    margin: auto;
+    width: 25%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+img {
+    user-select: none;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 999;
+    padding: 20px 0;
+    width: 100%;
+    font-family: "Ubuntu", sans-serif;
+    transition: box-shadow 1s ease-in-out;
+    transition: background 1s ease-in-out;
+}
+
+.navbar.dark {
+    background: #000000;
+}
+
+.navbar.sticky {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    padding: 0 100px;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    color: #17987c;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.navbar .logo img {
+    height: 50px;
+    margin: -15px 0;
+}
+
+.navbar .logo {
+    transition: all 0.3s ease;
+}
+
+.navbar .logo:hover {
+    transform: scale(1.05);
+}
+
+.navbar .logo a:hover {
+    color: #00715f;
+}
+
+.navbar.dark .logo a {
+    background: -webkit-linear-gradient(left, #007cf0, #00dfd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#icon {
+    max-width: 25px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#icon:hover {
+    transform: scale(1.1);
+}
+
+.menu-button {
+    color: black;
+    cursor: pointer;
+    display: none;
+}
+
+.scroll-up-button {
+    position: fixed;
+    width: 50px;
+    height: 55px;
+    background: rgba(254, 254, 254, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+    right: 30px;
+    bottom: 30px;
+    text-align: center;
+    border: 3px solid #17987c;
+    z-index: 3;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-up-button:hover {
+    box-shadow: 0px 4px 10px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.scroll-up-button.dark {
+    border-color: black;
+}
+
+.scroll-up-button.show {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a {
+    display: block;
+    color: #17987c;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 25px;
+    transition: all 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+    color: #00715f;
+    transform: scale(1.05);
+}
+
+.navbar.dark .menu li a {
+    background: -webkit-linear-gradient(left, #ff4d4d, #f9cb28);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home {
+    display: flex;
+    background: radial-gradient(ellipse at center, transparent 0, black 100%),
+        url(/assets/images/background-oska.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    text-shadow: black 1px 0 10px;
+    min-height: 500px;
+    font-family: "Ubuntu", sans-serif;
+    transition: all 0.3 ease;
+}
+
+body.dark {
+    background: #0e0e0e;
+}
+
+.home.dark,
+.about.dark,
+.skills.dark,
+.contact.dark,
+.experience.dark {
+    background: #0e0e0e;
+    color: white;
+}
+
+.home .max-width {
+    margin: 180px 0 auto 100px;
+}
+
+.home .home-content {
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1s; /* Firefox < 16 */
+    -ms-animation: fadein 1s; /* Internet Explorer */
+    -o-animation: fadein 1s; /* Opera < 12.1 */
+    animation: fadein 1s;
+}
+
+.home .home-content .text-1 {
+    font-size: 27px;
+}
+
+.home .home-content .text-2 {
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.home .home-content .text-3 {
+    font-size: 40px;
+    margin: 5px 0;
+}
+
+.home .home-content .text-3 span {
+    font-weight: 500;
+    color: #17987c;
+    text-shadow: black 1px 0 10px;
+}
+
+.home.dark .home-content .text-3 span {
+    background: -webkit-linear-gradient(left, #007cf0, #00dfd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.spacer1 {
+    aspect-ratio: 960/200;
+}
+
+.spacer2 {
+    aspect-ratio: 960/200;
+}
+.spacer3 {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(#000000, #00715f);
+    height: 80px;
+}
+
+.spacer4 {
+  background-color: #17987c;
+  height: 60px;
+}
+
+.spacer5 {
+  background-color: #00715f;
+  height: 30px;
+}
+
+.spacer1,
+.spacer2 {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1 {
+    background-image: url("/assets/images/layered-waves-haikei.svg");
+}
+
+.layer2 {
+    background-image: url("/assets/images/layered-waves-haikei\ \(1\).svg");
+}
+
+.layer3 {
+    background-image: url("/assets/images/layered-waves-haikei\ \(2\).svg");
+}
+
+.about,
+.visi,
+.struktur,
+.skills,
+.contact,
+.experience,
+footer {
+    font-family: "Poppins", sans-serif;
+}
+
+.about .title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.title::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translate(-50%);
+}
+
+.visi .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: white;
+    transform: translate(-50%);
+}
+
+.about .title::after {
+    content: "Tentang kami";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 20px;
+    background: white;
+    color: #17987c;
+    padding: 5px;
+    transform: translate(-50%);
+}
+
+.about.dark .title::before {
+    background: white;
+}
+
+.about.dark .title::after {
+    background: #0e0e0e;
+    color: #00dfd8;
+}
+
+.about .about-content,
+.contact .contact-content,
+.visi .visi-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.visi .visi-content {
+    align-items: flex-start;
+}
+
+.about .about-content .left {
+    width: 45%;
+}
+
+.about .about-content .left img {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: auto;
+}
+
+.about .about-content .right {
+    width: 55%;
+}
+
+.about .about-content .right .text {
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.about .about-content .right .text span {
+    font-weight: bold;
+    color: #17987c;
+}
+
+.about.dark .about-content .right .text span {
+    background: -webkit-linear-gradient(left, #007cf0, #00dfd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about .about-content .right p {
+    text-align: justify;
+}
+
+.about .about-content .right a {
+    text-align: justify;
+}
+
+.about.dark .about-content .right a {
+    background: -webkit-linear-gradient(left, #ff4d4d, #f9cb28);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.visi {
+    background-color: #17987c;
+    color: white;
+}
+
+.visi .title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.visi .visi-content .column {
+    width: calc(50% - 30px);
+}
+
+.visi .visi-content .text {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.visi .visi-content .left p,
+.visi .visi-content .right p {
+    text-align: justify;
+}
+
+.visi .visi-content .left .icons,
+.visi .visi-content .right .icons {
+    margin: 10px 0;
+}
+
+.visi .visi-content .row {
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+
+.visi .visi-content .row .info {
+    margin-left: 30px;
+}
+
+.visi .visi-content .info .head {
+    font-weight: 500;
+}
+
+.visi .visi-content .info .sub-title {
+    color: #17987c;
+}
+
+.struktur .title::after {
+  content: "2021/2022";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  font-size: 20px;
+  background: white;
+  color: #17987c;
+  padding: 5px;
+  transform: translate(-50%);
+}
+
+.struktur .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.struktur .container2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.struktur .card {
+    background: white;
+    color: black;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 15px 25px;
+    text-align: left;
+    height: 100px;
+    margin: 5px 15px 20px 15px;
+    transition: all 0.3s ease;
+}
+
+.struktur .card2 {
+  background: white;
+    color: black;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 15px 25px;
+    text-align: left;
+    height: 350px;
+    margin: 5px 15px 20px 15px;
+    transition: all 0.3s ease;
+}
+
+.struktur .card a,
+.struktur .card2 a {
+    color: #17987c;
+}
+
+.struktur .card a,
+.struktur .card2 a {
+    color: white;
+    font-weight: bold;
+}
+
+.struktur .card h3,
+.struktur .card2 h3 {
+    text-align: left;
+    opacity: 1;
+    padding: 5px 0px 0px 0px;
+}
+
+.struktur .card h4,
+.struktur .card2 h4 {
+    text-align: left;
+    opacity: 1;
+    padding: 3px 0px 0px 0px;
+}
+
+.struktur .card:hover,
+.struktur .card2:hover {
+    box-shadow: 0px 6px 20px 0 rgba(0, 0, 0, 0.2);
+    background: #fefefe;
+}
+
+.struktur.card .box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 150px;
+    justify-content: left;
+    transition: all 0.3s ease;
+}
+
+.struktur .card,
+.struktur .card2 {
+    transform: scale(1);
+    overflow: hidden;
+}
+
+.struktur .card:hover,
+.struktur .card2:hover {
+    transform: scale(1.05);
+}
+
+.struktur .card .text,
+.struktur .card2 .text {
+    font-size: 0.8em;
+    font-weight: 500;
+    margin: 10px 0 0 0;
+}
+
+.skills .title,
+.struktur .title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.contact .title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.contact .title::after {
+    content: "Hubungi Kami";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 20px;
+    background: white;
+    color: #17987c;
+    padding: 5px;
+    transform: translate(-50%);
+}
+
+.contact.dark .title::before {
+    background: white;
+}
+
+.contact.dark .title::after {
+    background: #0e0e0e;
+    color: #00dfd8;
+}
+
+.contact .contact-content .column {
+    width: calc(50% - 30px);
+}
+
+.contact .contact-content .text {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact .contact-content .left p {
+    text-align: justify;
+}
+
+.contact .contact-content .left .icons {
+    margin: 10px 0;
+}
+
+.contact .contact-content .row {
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+
+.contact .contact-content .row .info {
+    margin-left: 30px;
+}
+
+.contact .contact-content .info .head {
+    font-weight: 500;
+}
+
+.contact .contact-content .info .sub-title {
+    color: #17987c;
+}
+
+.contact.dark .contact-content .info .sub-title {
+    font-weight: bold;
+    background: -webkit-linear-gradient(left, #007cf0, #00dfd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact .right form .fields {
+    display: flex;
+}
+
+.contact .right form .field,
+.contact .right form .fields .field {
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.contact .right form .textarea {
+    height: 80px;
+    width: 100%;
+}
+
+.contact .right form .name {
+    margin-right: 10px;
+}
+.contact .right form .email {
+    margin-left: 10px;
+}
+
+.contact .right form .field input,
+.contact .right form .textarea textarea {
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: "Poppins", sans-serif;
+}
+
+.contact .right form .textarea textarea {
+    padding-top: 10px;
+    resize: none;
+}
+
+.contact .right form .button {
+    height: 47px;
+    width: 170px;
+}
+.contact .right form .button button {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #17987c;
+    background: #17987c;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact .right form .button button:hover {
+    color: #17987c;
+    background: white;
+}
+
+.contact.dark .right form .button button {
+    border-color: black;
+    background: -webkit-linear-gradient(left, #007cf0, #00dfd8);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.contact.dark .right form .button button:hover {
+    color: white;
+    transform: scale(1.05);
+}
+
+footer {
+    background: #00715f;
+    padding: 20px 23px;
+    color: white;
+    text-align: center;
+}
+
+footer p a {
+    color: white;
+    font-weight: bold;
+}
+
+footer p a:hover {
+    background: -webkit-linear-gradient(left, #007cf0, #00dfd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+footer.dark {
+    background: #000000;
+}
+
+footer.dark p a {
+    background: -webkit-linear-gradient(left, #007cf0, #00dfd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+footer.dark p a:hover {
+    transform: scale(1.05);
+}
+
+footer p span {
+    margin: 0 3px;
+    font-size: 1.5em;
+    color: red;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .home .max-width {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 1104px) {
+    .about .about-content .left img {
+        height: 350px;
+        width: 350px;
+    }
+    .contact .contact-content .row {
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .max-width {
+        padding: 0 50px;
+    }
+    .navbar .max-width {
+        padding: 0 50px;
+    }
+    .home .max-width {
+        margin-top: 150px;
+    }
+    .struktur .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .menu-button {
+        display: block;
+        z-index: 9999;
+    }
+
+    .scroll-up-button {
+        transform: scale(0.8);
+    }
+
+    .navbar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        right: -100%;
+        top: 0;
+        background: rgba(254, 254, 254, 0.9);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar.dark .menu {
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+    .navbar .menu.active {
+        right: 0;
+        z-index: 9998;
+    }
+
+    .navbar .menu li {
+        display: block;
+    }
+
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+
+    .home .home-content .text-1 {
+        font-size: 23px;
+    }
+    .home .home-content .text-2 {
+        font-size: 70px;
+    }
+    .home .home-content .text-3 {
+        font-size: 35px;
+    }
+    .max-width {
+        max-width: 800px;
+    }
+    .about .about-content .column {
+        width: 100%;
+    }
+    .about .about-content .left {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right {
+        flex: 100%;
+    }
+    .contact .contact-content .column,
+    .visi .visi-content .column {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+
+    .struktur .container2 {
+      grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .max-width {
+        padding: 0 23px;
+    }
+    .navbar .max-width {
+        padding: 0 23px;
+    }
+
+    .home .home-content .text-1 {
+        font-size: 20px;
+    }
+    .home .home-content .text-2 {
+        font-size: 60px;
+    }
+    .home .home-content .text-3 {
+        font-size: 30px;
+    }
+    .contact .contact-content .row {
+        height: 100px;
+    }
+    .struktur .container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .struktur .card {
+      font-size: 0.8em;
+  }
+    .struktur .card2 {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .max-width {
+        padding: 0 23px;
+    }
+
+    .home .max-width {
+        margin-top: 100px;
+    }
+    .home .home-content .text-1 {
+        font-size: 20px;
+    }
+    .home .home-content .text-2 {
+        font-size: 60px;
+    }
+    .home .home-content .text-3 {
+        font-size: 30px;
+    }
+
+}
