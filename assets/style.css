@@ -167,7 +167,7 @@ img {
 .home {
     display: flex;
     background: radial-gradient(ellipse at center, transparent 0, black 100%),
-        url(/assets/images/background-oska.jpg) no-repeat center center;
+        url(https://raw.githubusercontent.com/rkefialrfiza/rkefialrfiza.github.io/main/assets/images/background-oska.jpg) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
