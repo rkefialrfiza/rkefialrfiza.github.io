@@ -62,10 +62,11 @@ img {
 }
 
 .navbar .logo a {
-    color: #17987c;
+    color: white;
     font-size: 30px;
     font-weight: 600;
 }
+
 
 .navbar .logo img {
     height: 50px;
@@ -146,11 +147,15 @@ img {
 
 .navbar .menu li a {
     display: block;
-    color: #17987c;
+    color: white;
     font-size: 18px;
     font-weight: bold;
     margin-left: 25px;
     transition: all 0.3s ease;
+}
+
+.navbar.sticky .menu li a {
+    color: #17987c;
 }
 
 .navbar .menu li a:hover {
@@ -167,7 +172,8 @@ img {
 .home {
     display: flex;
     background: radial-gradient(ellipse at center, transparent 0, black 100%),
-        url(https://raw.githubusercontent.com/rkefialrfiza/rkefialrfiza.github.io/main/assets/images/background-oska.jpg) no-repeat center center;
+        url(https://raw.githubusercontent.com/rkefialrfiza/rkefialrfiza.github.io/main/assets/images/background-oska.jpg)
+            no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -249,13 +255,13 @@ section {
 }
 
 .spacer4 {
-  background-color: #17987c;
-  height: 60px;
+    background-color: #17987c;
+    height: 60px;
 }
 
 .spacer5 {
-  background-color: #00715f;
-  height: 30px;
+    background-color: #00715f;
+    height: 30px;
 }
 
 .spacer1,
@@ -458,15 +464,15 @@ footer {
 }
 
 .struktur .title::after {
-  content: "2021/2022";
-  position: absolute;
-  bottom: -12px;
-  left: 50%;
-  font-size: 20px;
-  background: white;
-  color: #17987c;
-  padding: 5px;
-  transform: translate(-50%);
+    content: "2021/2022";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 20px;
+    background: white;
+    color: #17987c;
+    padding: 5px;
+    transform: translate(-50%);
 }
 
 .struktur .container {
@@ -475,8 +481,8 @@ footer {
 }
 
 .struktur .container2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .struktur .card {
@@ -492,7 +498,7 @@ footer {
 }
 
 .struktur .card2 {
-  background: white;
+    background: white;
     color: black;
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -638,6 +644,10 @@ footer {
 }
 
 .contact .contact-content .info .sub-title {
+    color: #17987c;
+}
+
+.contact .contact-content .info .sub-title a{
     color: #17987c;
 }
 
@@ -883,6 +893,7 @@ footer p span {
         display: inline-block;
         margin: 20px 0;
         font-size: 25px;
+        color: #17987c;
     }
 
     .home .home-content .text-1 {
@@ -915,11 +926,46 @@ footer p span {
     }
 
     .struktur .container2 {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
 }
 
 @media screen and (max-width: 690px) {
+    .visi,
+    .struktur,
+    .about,
+    .skills,
+    .contact,
+    .experience,
+    footer {
+        font-size: 0.8em;
+    }
+
+    .visi .title,
+    .struktur .title,
+    .about .title,
+    .skills .title,
+    .contact .title,
+    .experience .title {
+        font-size: 30px;
+    }
+
+    .contact .right form .field input,
+    .contact .right form .textarea textarea {
+        padding: 0 15px;
+        font-size: 12px;
+    }
+
+
+    .contact .right form .button {
+        height: 40px;
+        width: 100px;
+    }
+    .contact .right form .button button {
+        font-size: 15px;
+        font-weight: 500;
+    }
+
     .max-width {
         padding: 0 23px;
     }
@@ -943,12 +989,6 @@ footer p span {
         display: grid;
         grid-template-columns: 1fr;
     }
-    .struktur .card {
-      font-size: 0.8em;
-  }
-    .struktur .card2 {
-        font-size: 0.8em;
-    }
 }
 
 @media screen and (max-width: 500px) {
@@ -968,5 +1008,4 @@ footer p span {
     .home .home-content .text-3 {
         font-size: 30px;
     }
-
 }
