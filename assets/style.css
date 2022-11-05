@@ -9,6 +9,7 @@ html {
 }
 
 ::selection {
+    color: white;
     background: #00715f;
 }
 
@@ -22,6 +23,21 @@ hr {
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+.clearfix:after {
+    clear: both;
 }
 
 img {
@@ -44,6 +60,7 @@ img {
 
 .navbar.sticky {
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.5);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -66,7 +83,6 @@ img {
     font-size: 30px;
     font-weight: 600;
 }
-
 
 .navbar .logo img {
     height: 50px;
@@ -286,6 +302,7 @@ section {
 
 .about,
 .visi,
+.proker,
 .struktur,
 .skills,
 .contact,
@@ -324,6 +341,17 @@ footer {
     width: 180px;
     height: 3px;
     background: white;
+    transform: translate(-50%);
+}
+
+.proker .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: black;
     transform: translate(-50%);
 }
 
@@ -425,6 +453,17 @@ footer {
     font-family: "Ubuntu", sans-serif;
 }
 
+.proker .title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: "Ubuntu", sans-serif;
+}
+
 .visi .visi-content .column {
     width: calc(50% - 30px);
 }
@@ -438,6 +477,7 @@ footer {
 .visi .visi-content .left p,
 .visi .visi-content .right p {
     text-align: justify;
+    margin-bottom: 8px;
 }
 
 .visi .visi-content .left .icons,
@@ -461,6 +501,173 @@ footer {
 
 .visi .visi-content .info .sub-title {
     color: #17987c;
+}
+
+.proker .container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.proker .container {
+    align-items: center;
+    justify-content: center;
+}
+
+.container figure {
+	position: relative;
+    
+	overflow: hidden;
+    padding: 15px 25px;
+	margin: 10px auto;
+	width: 100%;
+	height: auto;
+	background: #00715f;
+	text-align: center;
+	cursor: pointer;
+}
+
+.container figure img {
+	position: relative;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.container figure figcaption {
+	padding: 2em;
+	color: #fff;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.container figure {
+    transition: transform 0.3s ease;
+}
+
+.container figure:hover {
+    transform: scale(1.05);
+}
+
+.container figure figcaption::before,
+.container figure figcaption::after {
+	pointer-events: none;
+}
+
+.container figure figcaption,
+.container figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.container figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.container figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+    text-shadow: black 1px 0 10px;
+}
+
+.container figure h2 span {
+	font-weight: 800;
+}
+
+.container figure h2,
+.container figure p {
+	margin: 0;
+}
+
+.container figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+figure.effect-kira {
+    background: #fff;
+    text-align: left;
+}
+
+figure.effect-kira img {
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+}
+
+figure.effect-kira figcaption {
+    z-index: 1;
+}
+
+figure.effect-kira p {
+    padding: 2em 0.5em;
+    font-weight: normal;
+    font-size: 90%;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+}
+
+figure.effect-kira p a {
+    margin: 0 0.5em;
+    color: #00715f;
+}
+
+figure.effect-kira p a:hover,
+figure.effect-kira p a:focus {
+    opacity: 0.6;
+}
+
+figure.effect-kira figcaption::before {
+    position: absolute;
+    top: 0;
+    right: 2em;
+    left: 2em;
+    z-index: -1;
+    height: 3.5em;
+    background: #fff;
+    content: "";
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(0, 4em, 0) scale3d(1, 0.023, 1);
+    transform: translate3d(0, 4em, 0) scale3d(1, 0.023, 1);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+}
+
+figure.effect-kira:hover img {
+    opacity: 0.5;
+}
+
+figure.effect-kira:hover p {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+figure.effect-kira:hover figcaption::before {
+    opacity: 0.7;
+    -webkit-transform: translate3d(0, 5em, 0) scale3d(1, 1, 1);
+    transform: translate3d(0, 5em, 0) scale3d(1, 1, 1);
+}
+
+.look-for-more {
+    font-size: 20px;
 }
 
 .struktur .title::after {
@@ -647,7 +854,7 @@ footer {
     color: #17987c;
 }
 
-.contact .contact-content .info .sub-title a{
+.contact .contact-content .info .sub-title a {
     color: #17987c;
 }
 
@@ -729,6 +936,32 @@ footer {
 
 .contact.dark .right form .button button:hover {
     color: white;
+    transform: scale(1.05);
+}
+
+.socialmedia {
+    background-color: #17987c;
+    padding: 10px;
+    color: white;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialmedia a{
+    margin: auto 10px;
+    padding: 10px 0;
+    color: white;
+}
+
+.socialmedia i{
+    font-size: 20px;
+    transform: all 0.3s ease;
+}
+
+.socialmedia i:hover{
+    opacity: 0.5;
     transform: scale(1.05);
 }
 
@@ -850,6 +1083,9 @@ footer p span {
     .struktur .container {
         grid-template-columns: 1fr 1fr;
     }
+    .proker .container {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -922,10 +1158,10 @@ footer p span {
     .contact .contact-content .column,
     .visi .visi-content .column {
         width: 100%;
-        margin-bottom: 35px;
+        margin-bottom: 20px;
     }
 
-    .struktur .container2 {
+    .proker .container {
         grid-template-columns: 1fr;
     }
 }
@@ -933,6 +1169,7 @@ footer p span {
 @media screen and (max-width: 690px) {
     .visi,
     .struktur,
+    .proker,
     .about,
     .skills,
     .contact,
@@ -942,6 +1179,7 @@ footer p span {
     }
 
     .visi .title,
+    .proker .title,
     .struktur .title,
     .about .title,
     .skills .title,
@@ -950,12 +1188,15 @@ footer p span {
         font-size: 30px;
     }
 
-    .contact .right form .field input,
-    .contact .right form .textarea textarea {
-        padding: 0 15px;
-        font-size: 12px;
+    .look-for-more {
+        font-size: 80%;
     }
 
+    .contact .right form .field input,
+    .contact .right form .textarea textarea {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
 
     .contact .right form .button {
         height: 40px;
@@ -983,7 +1224,7 @@ footer p span {
         font-size: 30px;
     }
     .contact .contact-content .row {
-        height: 100px;
+        height: 70px;
     }
     .struktur .container {
         display: grid;
@@ -1009,3 +1250,4 @@ footer p span {
         font-size: 30px;
     }
 }
+
