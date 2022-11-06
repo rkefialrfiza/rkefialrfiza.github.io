@@ -1170,9 +1170,6 @@ footer p span {
         margin-bottom: 20px;
     }
 
-    .proker .container {
-        grid-template-columns: 1fr;
-    }
     .struktur .container2 {
         display: grid;
         grid-template-columns: 1fr;
@@ -1241,6 +1238,9 @@ footer p span {
     }
     .struktur .container {
         display: grid;
+        grid-template-columns: 1fr;
+    }
+    .proker .container {
         grid-template-columns: 1fr;
     }
 }
